@@ -1,0 +1,329 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 1920px;
+    height: 100%;
+    background: url("../images/01.jpg") no-repeat;
+    background-size: 100%;
+    font-size: 13px;
+    overflow: hidden;
+    position: relative;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+}
+
+.container{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 60px;
+    left: 20%;
+    transition: all 1s;
+}
+.navbar{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 50px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.navbar ul li{
+    display: inline-block;
+    cursor: pointer;
+}
+.navbar ul li:nth-child(1){
+    width: 305px;
+    margin-left: 25px;
+    margin-top: -10px;
+    margin-right: 45px;
+    font-size: 20px;
+    vertical-align: top;
+}
+.navbar ul li:nth-child(1) img{
+    width: 274.5px;
+    height: 57.6px;
+}
+.navbar ul li:nth-child(2){
+    position: relative;
+    margin-right: 130px;
+    font-size: 0;
+    vertical-align: top;
+}
+.navbar ul li>select,.navbar ul li>input[type=text],.navbar ul li>button{
+    height: 45px;
+    width: 60px;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+.navbar ul li>select{
+    width: 85px;
+    text-indent: .3em;
+}
+.navbar ul li>select option{
+    text-align: center;
+}
+.navbar ul li>input[type=text]{
+    width: 300px;
+    padding-left:10px; 
+    border: .5px solid rgba(0, 0, 0, 0.1);
+}
+.navbar ul li>span:hover{
+    color: #3383ff;
+}
+.navbar ul li>button:hover{
+    cursor: pointer;
+    background: #fff;
+    color: #3383ff;
+}
+.navbar ul li:nth-child(3),.navbar ul li:nth-child(4){
+    width:80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.navbar ul li:nth-child(3):hover,.navbar ul li:nth-child(4):hover{
+    color: brown;
+}
+.content{
+    width: 1150px;
+    height: 565px;
+    margin-top: 10px;
+}
+.content>div{
+    display: inline-block;
+    width: 340px;
+    height:180px;
+    margin: 5px 5px 5px 30px;
+    text-align: center;
+}
+.content>div>.box-title{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+}
+.content>div>.box-title:hover{
+    border-radius: 3px;
+    cursor: pointer;
+    background: rgba(190, 212, 240, 0.7);
+    color: #3383ff;
+}
+.content>div>.box-content{
+    font-size: 0;
+}
+.content>div>.box-content li{
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 43px;
+    line-height: 43px;
+    margin: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    transition: all .3s;
+}
+.content>div>.box-content li:hover{
+    height: 43px;
+    line-height: 43px;
+    border-radius: 3px;
+    background: #3383ff;
+    font-size: 23px;
+    font-weight: 600;
+}
+.content>div>.box-content li>a{
+    position: absolute;
+    left: 0;
+    width: 110px;
+    text-decoration: none;
+    color: #333;
+}
+.content>div>.box-content li:hover a{
+    color: #fff;
+}
+.pop-up{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background: rgba(0, 0, 0, 0.3);
+}
+.pop-up-chuang{
+    position: absolute;
+    top: 30px;
+    margin-left: 35%;
+    width: 600px;
+    min-height: 350px;
+    padding-bottom: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #111;
+    z-index: 100;
+}
+.pop-up-chuang>div{
+    height: 100%;
+}
+.pop-up-title{
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #ccc;
+}
+.pop-up-title li{
+    margin-top: 25px;
+    margin-left: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+.pop-up-title li:nth-child(5){
+    width: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    float: right;
+    color: #ccc;
+}
+.pop-up-title-jianjie h1{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 50px;
+}
+.pop-up-title-jianjie p{
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin:3px 10px;
+}
+.pop-up-title-jianjie p title{
+    display: inline-block;
+    width: 140px;
+    margin-right: 20px;
+    text-align: right;
+}
+.pop-up-title-jianjie p span{
+    display: inline-block;
+    font-size: 13px;
+}
+
+.hidden{
+    display: none;
+}
+.font-size-big{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div.return{
+    position: absolute;
+    top:-40px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #111;
+   
+}
+div.return>div{
+    width: 80px;
+    float: right;
+}
+div.return>div:hover{
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #3383ff;
+    cursor: pointer;
+}
+.content-two{
+    position: absolute;
+    top:100px;
+    left:100%;
+    transition: all 1s; 
+}
+.leftmouse{
+    left:20%;
+}
+@media screen and (max-width:1680px){
+    .leftmouse{
+        left:240px;
+    }
+    .content-two{
+        top:90px;
+    }
+    .container{
+        top: 60px;
+        left: 240px;
+    }   
+    .pop-up-chuang{
+        margin-left: 30%;
+    }
+}
+@media screen and (max-width:1440px){
+    .container{
+        top: 40px;
+        left: 140px;
+    }
+    .navbar{
+        margin-bottom: 35px;
+    }
+    .leftmouse{
+        left:140px;
+    }
+    .content-two{
+        top:80px;
+    }
+    .pop-up-chuang{
+        margin-left: 24%;
+    }
+}
+@media screen and (max-width:1366px){
+    .container{
+        top: 5px;
+        left: 100px;
+    }
+    .navbar{
+        margin-bottom: 15px;
+    }
+    .content>div{
+        margin: 0px 0px 5px 30px;
+    }
+    .leftmouse{
+        left:100px;
+    }
+    .content-two{
+        top:50px;
+    }
+    .pop-up-chuang{
+        margin-left: 18%;
+    }
+}
+@media screen and (max-width:1280px){
+    .container{
+        top: 0px;
+        left: 50px;
+    }
+    .content>div{
+        margin: 0px 0px 5px 30px;
+    }
+    .leftmouse{
+        left:50px;
+    }
+    .content-two{
+        top:50px;
+    }
+    .pop-up-chuang{
+        margin-left: 18%;
+    }
+}
+
+.leftmouse-home{
+    left:-100%;
+}
