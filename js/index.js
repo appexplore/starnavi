@@ -46,7 +46,9 @@ function site() {
 }
 $('.navbar ul li button').click(()=>{
     result +=$('.navbar ul li input').val();
-    window.open(result);
+    $(".open").attr("href",result);
+    $("#open").click();
+    //window.open(result);
     site();
 });
 
