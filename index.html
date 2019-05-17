@@ -23,6 +23,35 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+<!-- 百度 样式 -->
+<style type="text/css">
+    
+.keylist {
+    margin-left: 85px;
+    width: 310px;
+    outline: 0;
+    background: #fff;
+    color: #000000;
+    font-weight: bold;
+}
+.keylist div {
+    float: none;
+    padding: 3px 8px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.keylist div:hover{
+    background-color:#f1f1f1;
+}
+
+*{
+     z-index: 0;position: relative;
+}
+.navbar {
+    z-index: 1;
+}
+</style>
+
 <body>
     <div class="container">
         <nav class="navbar">
@@ -35,8 +64,12 @@ var _hmt = _hmt || [];
                         <option value="bing">必应</option>
                         <option value="mijisou">秘迹搜</option>
                     </select>
-                    <input type="text">
-                    <button>搜索</button>
+                    <input name="wd" id="kw-2" maxlength="100" autocomplete="off" type="text">
+                    <button id="su-2">搜索</button>
+                    <div class="keylist" style="display: none;">
+                        <div>翻译</div>
+                        
+                    </div>
                 </li>
                 <li class="more-site">更多站点</li>
                 <li class="open-pop-up">关于</li>
@@ -164,7 +197,8 @@ var _hmt = _hmt || [];
                     <li><a href="https://smallpdf.com/cn" target="_blank" rel="nofollow">PDF</a></li>
                     <li><a href="https://ypsuperkey.meek.com.cn/query" target="_blank" rel="nofollow">网盘密码</a></li>
                     <li><a href="http://www.virscan.org/" target="_blank" rel="nofollow">病毒扫描</a></li>
-                    <li><a href="https://dwz.cn/" target="_blank" rel="nofollow">短网址</a></li>
+		    <li><a href="http://www.qmaile.com/" target="_blank" rel="nofollow">VIP解析</a></li>
+                    
                     <li><a href="https://sm.ms/" target="_blank" rel="nofollow">图床</a></li>
                     <li><a href="https://bigjpg.com/ target="_blank" rel="nofollow">放大图片</a></li>
                     <li><a href="https://www.pdflibr.com/" target="_blank" rel="nofollow">接收短信</a></li>
@@ -177,15 +211,16 @@ var _hmt = _hmt || [];
                     搜索·资源
                 </div>
                 <ul class="box-content">
-                    <li><a href="http://www.zimuzu.io/" target="_blank" rel="nofollow">人人影视</a></li>
+                    <li><a href="http://www.zmz2019.com/" target="_blank" rel="nofollow">人人影视</a></li>
                     <li><a href="https://www.dytt8.net/" target="_blank" rel="nofollow">电影天堂</a></li>
                     <li><a href="https://www.cupfox.com/" target="_blank" rel="nofollow">茶杯狐</a></li>
+		    <li><a href="https://www.xiaokesoso.com" target="_blank" rel="nofollow">网盘搜索</a></li>
                     <li><a href="https://www.portablesoft.org/" target="_blank" rel="nofollow">便携软件</a></li>
                     <li><a href="https://www.zimuku.cn/" target="_blank" rel="nofollow">字幕</a></li>
                     <li><a href="https://www.easyicon.net/" target="_blank" rel="nofollow">图标</a></li>
                     <li><a href="http://www.cnplugins.com/" target="_blank" rel="nofollow">插件</a></li>
                     <li><a href="https://www.zhaodll.com/" target="_blank" rel="nofollow">DLL</a></li>
-                    <li><a href="http://www.qmaile.com/" target="_blank" rel="nofollow">VIP解析</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -389,5 +424,55 @@ var _hmt = _hmt || [];
         window.location.href = "https://opage.appts.cn/";
     </script>
 </body>
+<script type="text/javascript">
+     var btn=$("#kw-2"),oUl=$(".keylist")[0];
 
+     $("#qingkong").click(function(){
+         oUl.style.display = 'none';
+     })
+
+     btn.keyup(function(){
+           var value = this.value;
+            if (value) {
+                var oScript = document.createElement('script');
+                oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + value + '&cb=aa'
+                document.body.appendChild(oScript);
+                oScript.remove();
+            } else if(value == 0){
+                oUl.style.display = 'none';
+            }
+
+     })
+
+    function aa(data) {
+        //console.log(data);
+        oUl.style.display = 'block';
+        var list = data.s;
+        var str = '';
+        
+        for (var i = 0; i < list.length; i++) {
+            // 最多显示8行
+            if(i<8){
+                str += '<div>' +list[i] + '</div>';
+            }
+            
+        }
+        oUl.innerHTML = str;
+    }
+
+    $(".keylist").on('click','div',function(){
+        var value = $(this).text();
+        btn.val(value);
+        $('#su-2').click();
+        oUl.style.display = 'none';
+    });
+
+    $(document).keydown(function(event){
+      　　if(event.keyCode==13 && btn.val().trim()!=""){
+      　　    
+            $('#su-2').click();
+            oUl.style.display = 'none';   
+      　　}
+    });
+</script>
 </html>
