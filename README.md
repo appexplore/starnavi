@@ -5,6 +5,10 @@
 
 因此放出星空导航最后一个版本
 
+### 界面截图
+
+![截图](https://raw.githubusercontent.com/appexplore/starnavi/master/demo.png)
+
 ### 版权声明
 完全免费无任何限制，如果能给我留个友链就非常感谢了
 
