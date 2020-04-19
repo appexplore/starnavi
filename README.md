@@ -7,7 +7,7 @@
 
 ### 界面截图
 
-![截图](https://raw.githubusercontent.com/appexplore/starnavi/master/demo.png)
+![截图](https://ae01.alicdn.com/kf/H41a79835de984df9b694140b96c95ee9j.jpg)
 
 ### 版权声明
 完全免费无任何限制，如果能给我留个友链就非常感谢了
